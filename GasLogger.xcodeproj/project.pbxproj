@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD3BA13421B5F6400072A16F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3BA13321B5F6400072A16F /* AppDelegate.swift */; };
+		AD3BA13621B5F6400072A16F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3BA13521B5F6400072A16F /* ViewController.swift */; };
+		AD3BA13921B5F6400072A16F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD3BA13721B5F6400072A16F /* Main.storyboard */; };
+		AD3BA13B21B5F6410072A16F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD3BA13A21B5F6410072A16F /* Assets.xcassets */; };
+		AD3BA13E21B5F6410072A16F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD3BA13C21B5F6410072A16F /* LaunchScreen.storyboard */; };
+		AD3BA14921B5F6410072A16F /* GasLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3BA14821B5F6410072A16F /* GasLoggerTests.swift */; };
+		AD3BA15421B5F6410072A16F /* GasLoggerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3BA15321B5F6410072A16F /* GasLoggerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD3BA14521B5F6410072A16F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD3BA12821B5F6400072A16F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD3BA12F21B5F6400072A16F;
+			remoteInfo = GasLogger;
+		};
+		AD3BA15021B5F6410072A16F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD3BA12821B5F6400072A16F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD3BA12F21B5F6400072A16F;
+			remoteInfo = GasLogger;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AD3BA13021B5F6400072A16F /* GasLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GasLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD3BA13321B5F6400072A16F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AD3BA13521B5F6400072A16F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AD3BA13821B5F6400072A16F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AD3BA13A21B5F6410072A16F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD3BA13D21B5F6410072A16F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AD3BA13F21B5F6410072A16F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD3BA14421B5F6410072A16F /* GasLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GasLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD3BA14821B5F6410072A16F /* GasLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasLoggerTests.swift; sourceTree = "<group>"; };
+		AD3BA14A21B5F6410072A16F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD3BA14F21B5F6410072A16F /* GasLoggerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GasLoggerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD3BA15321B5F6410072A16F /* GasLoggerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasLoggerUITests.swift; sourceTree = "<group>"; };
+		AD3BA15521B5F6410072A16F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD3BA12D21B5F6400072A16F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD3BA14121B5F6410072A16F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD3BA14C21B5F6410072A16F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD3BA12721B5F6400072A16F = {
+			isa = PBXGroup;
+			children = (
+				AD3BA13221B5F6400072A16F /* GasLogger */,
+				AD3BA14721B5F6410072A16F /* GasLoggerTests */,
+				AD3BA15221B5F6410072A16F /* GasLoggerUITests */,
+				AD3BA13121B5F6400072A16F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AD3BA13121B5F6400072A16F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD3BA13021B5F6400072A16F /* GasLogger.app */,
+				AD3BA14421B5F6410072A16F /* GasLoggerTests.xctest */,
+				AD3BA14F21B5F6410072A16F /* GasLoggerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD3BA13221B5F6400072A16F /* GasLogger */ = {
+			isa = PBXGroup;
+			children = (
+				AD3BA13321B5F6400072A16F /* AppDelegate.swift */,
+				AD3BA13521B5F6400072A16F /* ViewController.swift */,
+				AD3BA13721B5F6400072A16F /* Main.storyboard */,
+				AD3BA13A21B5F6410072A16F /* Assets.xcassets */,
+				AD3BA13C21B5F6410072A16F /* LaunchScreen.storyboard */,
+				AD3BA13F21B5F6410072A16F /* Info.plist */,
+			);
+			path = GasLogger;
+			sourceTree = "<group>";
+		};
+		AD3BA14721B5F6410072A16F /* GasLoggerTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD3BA14821B5F6410072A16F /* GasLoggerTests.swift */,
+				AD3BA14A21B5F6410072A16F /* Info.plist */,
+			);
+			path = GasLoggerTests;
+			sourceTree = "<group>";
+		};
+		AD3BA15221B5F6410072A16F /* GasLoggerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AD3BA15321B5F6410072A16F /* GasLoggerUITests.swift */,
+				AD3BA15521B5F6410072A16F /* Info.plist */,
+			);
+			path = GasLoggerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD3BA12F21B5F6400072A16F /* GasLogger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD3BA15821B5F6410072A16F /* Build configuration list for PBXNativeTarget "GasLogger" */;
+			buildPhases = (
+				AD3BA12C21B5F6400072A16F /* Sources */,
+				AD3BA12D21B5F6400072A16F /* Frameworks */,
+				AD3BA12E21B5F6400072A16F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GasLogger;
+			productName = GasLogger;
+			productReference = AD3BA13021B5F6400072A16F /* GasLogger.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AD3BA14321B5F6410072A16F /* GasLoggerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD3BA15B21B5F6410072A16F /* Build configuration list for PBXNativeTarget "GasLoggerTests" */;
+			buildPhases = (
+				AD3BA14021B5F6410072A16F /* Sources */,
+				AD3BA14121B5F6410072A16F /* Frameworks */,
+				AD3BA14221B5F6410072A16F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD3BA14621B5F6410072A16F /* PBXTargetDependency */,
+			);
+			name = GasLoggerTests;
+			productName = GasLoggerTests;
+			productReference = AD3BA14421B5F6410072A16F /* GasLoggerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AD3BA14E21B5F6410072A16F /* GasLoggerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD3BA15E21B5F6410072A16F /* Build configuration list for PBXNativeTarget "GasLoggerUITests" */;
+			buildPhases = (
+				AD3BA14B21B5F6410072A16F /* Sources */,
+				AD3BA14C21B5F6410072A16F /* Frameworks */,
+				AD3BA14D21B5F6410072A16F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD3BA15121B5F6410072A16F /* PBXTargetDependency */,
+			);
+			name = GasLoggerUITests;
+			productName = GasLoggerUITests;
+			productReference = AD3BA14F21B5F6410072A16F /* GasLoggerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD3BA12821B5F6400072A16F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Jacob Pitkin";
+				TargetAttributes = {
+					AD3BA12F21B5F6400072A16F = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					AD3BA14321B5F6410072A16F = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = AD3BA12F21B5F6400072A16F;
+					};
+					AD3BA14E21B5F6410072A16F = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = AD3BA12F21B5F6400072A16F;
+					};
+				};
+			};
+			buildConfigurationList = AD3BA12B21B5F6400072A16F /* Build configuration list for PBXProject "GasLogger" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD3BA12721B5F6400072A16F;
+			productRefGroup = AD3BA13121B5F6400072A16F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD3BA12F21B5F6400072A16F /* GasLogger */,
+				AD3BA14321B5F6410072A16F /* GasLoggerTests */,
+				AD3BA14E21B5F6410072A16F /* GasLoggerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD3BA12E21B5F6400072A16F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD3BA13E21B5F6410072A16F /* LaunchScreen.storyboard in Resources */,
+				AD3BA13B21B5F6410072A16F /* Assets.xcassets in Resources */,
+				AD3BA13921B5F6400072A16F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD3BA14221B5F6410072A16F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD3BA14D21B5F6410072A16F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD3BA12C21B5F6400072A16F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD3BA13621B5F6400072A16F /* ViewController.swift in Sources */,
+				AD3BA13421B5F6400072A16F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD3BA14021B5F6410072A16F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD3BA14921B5F6410072A16F /* GasLoggerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD3BA14B21B5F6410072A16F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD3BA15421B5F6410072A16F /* GasLoggerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD3BA14621B5F6410072A16F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD3BA12F21B5F6400072A16F /* GasLogger */;
+			targetProxy = AD3BA14521B5F6410072A16F /* PBXContainerItemProxy */;
+		};
+		AD3BA15121B5F6410072A16F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD3BA12F21B5F6400072A16F /* GasLogger */;
+			targetProxy = AD3BA15021B5F6410072A16F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AD3BA13721B5F6400072A16F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD3BA13821B5F6400072A16F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AD3BA13C21B5F6410072A16F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD3BA13D21B5F6410072A16F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AD3BA15621B5F6410072A16F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AD3BA15721B5F6410072A16F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD3BA15921B5F6410072A16F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GasLogger/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobpitkin.GasLogger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD3BA15A21B5F6410072A16F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GasLogger/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobpitkin.GasLogger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AD3BA15C21B5F6410072A16F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GasLoggerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobpitkin.GasLoggerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GasLogger.app/GasLogger";
+			};
+			name = Debug;
+		};
+		AD3BA15D21B5F6410072A16F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GasLoggerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobpitkin.GasLoggerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GasLogger.app/GasLogger";
+			};
+			name = Release;
+		};
+		AD3BA15F21B5F6410072A16F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GasLoggerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobpitkin.GasLoggerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GasLogger;
+			};
+			name = Debug;
+		};
+		AD3BA16021B5F6410072A16F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GasLoggerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobpitkin.GasLoggerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GasLogger;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD3BA12B21B5F6400072A16F /* Build configuration list for PBXProject "GasLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD3BA15621B5F6410072A16F /* Debug */,
+				AD3BA15721B5F6410072A16F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD3BA15821B5F6410072A16F /* Build configuration list for PBXNativeTarget "GasLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD3BA15921B5F6410072A16F /* Debug */,
+				AD3BA15A21B5F6410072A16F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD3BA15B21B5F6410072A16F /* Build configuration list for PBXNativeTarget "GasLoggerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD3BA15C21B5F6410072A16F /* Debug */,
+				AD3BA15D21B5F6410072A16F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD3BA15E21B5F6410072A16F /* Build configuration list for PBXNativeTarget "GasLoggerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD3BA15F21B5F6410072A16F /* Debug */,
+				AD3BA16021B5F6410072A16F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AD3BA12821B5F6400072A16F /* Project object */;
+}
