@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		AD3BA13421B5F6400072A16F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3BA13321B5F6400072A16F /* AppDelegate.swift */; };
-		AD3BA13621B5F6400072A16F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3BA13521B5F6400072A16F /* ViewController.swift */; };
+		AD3BA13621B5F6400072A16F /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3BA13521B5F6400072A16F /* DashboardController.swift */; };
 		AD3BA13921B5F6400072A16F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD3BA13721B5F6400072A16F /* Main.storyboard */; };
 		AD3BA13B21B5F6410072A16F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD3BA13A21B5F6410072A16F /* Assets.xcassets */; };
 		AD3BA13E21B5F6410072A16F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD3BA13C21B5F6410072A16F /* LaunchScreen.storyboard */; };
 		AD3BA14921B5F6410072A16F /* GasLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3BA14821B5F6410072A16F /* GasLoggerTests.swift */; };
 		AD3BA15421B5F6410072A16F /* GasLoggerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3BA15321B5F6410072A16F /* GasLoggerUITests.swift */; };
+		AD3BA16221B5F6B20072A16F /* LoggerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3BA16121B5F6B20072A16F /* LoggerViewController.swift */; };
+		AD3BA16421B5F8550072A16F /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3BA16321B5F8550072A16F /* AddViewController.swift */; };
+		AD3BA16621B5F8A80072A16F /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3BA16521B5F8A80072A16F /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,7 @@
 /* Begin PBXFileReference section */
 		AD3BA13021B5F6400072A16F /* GasLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GasLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD3BA13321B5F6400072A16F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AD3BA13521B5F6400072A16F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AD3BA13521B5F6400072A16F /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		AD3BA13821B5F6400072A16F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD3BA13A21B5F6410072A16F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD3BA13D21B5F6410072A16F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,9 @@
 		AD3BA14F21B5F6410072A16F /* GasLoggerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GasLoggerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD3BA15321B5F6410072A16F /* GasLoggerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasLoggerUITests.swift; sourceTree = "<group>"; };
 		AD3BA15521B5F6410072A16F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD3BA16121B5F6B20072A16F /* LoggerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerViewController.swift; sourceTree = "<group>"; };
+		AD3BA16321B5F8550072A16F /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		AD3BA16521B5F8A80072A16F /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				AD3BA13321B5F6400072A16F /* AppDelegate.swift */,
-				AD3BA13521B5F6400072A16F /* ViewController.swift */,
+				AD3BA16321B5F8550072A16F /* AddViewController.swift */,
+				AD3BA13521B5F6400072A16F /* DashboardController.swift */,
+				AD3BA16521B5F8A80072A16F /* EditViewController.swift */,
+				AD3BA16121B5F6B20072A16F /* LoggerViewController.swift */,
 				AD3BA13721B5F6400072A16F /* Main.storyboard */,
 				AD3BA13A21B5F6410072A16F /* Assets.xcassets */,
 				AD3BA13C21B5F6410072A16F /* LaunchScreen.storyboard */,
@@ -256,7 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD3BA13621B5F6400072A16F /* ViewController.swift in Sources */,
+				AD3BA16621B5F8A80072A16F /* EditViewController.swift in Sources */,
+				AD3BA13621B5F6400072A16F /* DashboardController.swift in Sources */,
+				AD3BA16221B5F6B20072A16F /* LoggerViewController.swift in Sources */,
+				AD3BA16421B5F8550072A16F /* AddViewController.swift in Sources */,
 				AD3BA13421B5F6400072A16F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
