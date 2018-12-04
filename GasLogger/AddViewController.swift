@@ -9,7 +9,10 @@
 import UIKit
 
 class AddViewController: UIViewController {
-
+    @IBOutlet weak var milesField: UITextField!
+    @IBOutlet weak var priceField: UITextField!
+    @IBOutlet weak var gallonsField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
