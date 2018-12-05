@@ -9,7 +9,7 @@
 import UIKit
 import SQLite3
 
-class LoggerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddEntryProtocol {
+class LoggerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddEntryProtocol, EditEntryProtocol {
     
     struct Entry {
         var date: Double
@@ -21,11 +21,20 @@ class LoggerViewController: UIViewController, UITableViewDataSource, UITableView
     
     var entries: [Entry] = []
     var db: OpaquePointer?
-    var entryBeingEdited: Int?
+    var entryBeingEdited: Int!
     @IBOutlet var tableView: UITableView!
     
     func addEntry(date: Double, miles: Int, price: Double, gallons: Double) {
         entries.append(Entry(date: date, miles: miles, price: price, gallons: gallons, spent: price * gallons))
+        
+        self.tableView.reloadData()
+    }
+    
+    func editEntry(miles: Int, price: Double, gallons: Double) {
+        entries[entryBeingEdited].miles = miles
+        entries[entryBeingEdited].price = price
+        entries[entryBeingEdited].gallons = gallons
+        entries[entryBeingEdited].spent = price * gallons
         
         self.tableView.reloadData()
     }
@@ -84,7 +93,31 @@ class LoggerViewController: UIViewController, UITableViewDataSource, UITableView
                 view.previousMileage = entries[entries.count-1].miles
             }
         } else if segue.identifier == "editSegue" {
-            // edit segue stuff
+            let view = segue.destination as! EditViewController
+            view.delegate = self
+            entryBeingEdited = tableView.indexPathForSelectedRow?.row
+            
+            view.miles = entries[entryBeingEdited].miles
+            view.price = entries[entryBeingEdited].price
+            view.gallons = entries[entryBeingEdited].gallons
+            
+            if entryBeingEdited == 0 {
+                view.previousMileage = 0
+                
+                if entries.count > 1 {
+                    view.nextMileage = entries[entryBeingEdited+1].miles
+                } else {
+                    view.nextMileage = Int.max
+                }
+            } else {
+                view.previousMileage = entries[entryBeingEdited-1].miles
+                
+                if entryBeingEdited < entries.count - 1 {
+                    view.nextMileage = entries[entryBeingEdited+1].miles
+                } else {
+                    view.nextMileage = Int.max
+                }
+            }
         }
     }
     
@@ -103,7 +136,7 @@ class LoggerViewController: UIViewController, UITableViewDataSource, UITableView
             print("error opening database")
         }
         
-        if sqlite3_exec(db, "CREATE TABLEIF NOT EXISTS Entries (id INTEGER PRIMARY KEY AUTOINCREMENET, date DOUBLE, miels INTEGER, price DOUBLE, gallons DOUBLE, spent DOUBLE)", nil, nil, nil) != SQLITE_OK {
+        if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS Entries (id INTEGER PRIMARY KEY AUTOINCREMENT, date DOUBLE, miles INTEGER, price DOUBLE, gallons DOUBLE, spent DOUBLE)", nil, nil, nil) != SQLITE_OK {
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error creating table: \(errmsg)")
         }

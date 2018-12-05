@@ -28,6 +28,12 @@ class AddViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = save
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("previous: \(previousMileage!)")
+    }
+    
     @objc func saveItem() {
         if milesField.text?.isEmpty == true || priceField.text?.isEmpty == true || gallonsField.text?.isEmpty == true {
             return

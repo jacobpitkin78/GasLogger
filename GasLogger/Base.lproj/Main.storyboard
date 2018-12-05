@@ -43,7 +43,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="xpZ-sE-aqe" kind="show" id="S1Z-fI-MVy"/>
+                                    <segue destination="xpZ-sE-aqe" kind="show" identifier="editSegue" id="S1Z-fI-MVy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -60,7 +60,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ewy-z8-fJq">
                             <connections>
-                                <segue destination="8n7-7S-BKQ" kind="show" id="Asa-WT-6bK"/>
+                                <segue destination="8n7-7S-BKQ" kind="show" identifier="addSegue" id="Asa-WT-6bK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -124,14 +124,14 @@
                                                 <accessibility key="accessibilityConfiguration" identifier="addPriceField"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bws-d2-80E">
                                                 <rect key="frame" x="0.0" y="76" width="186" height="30"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="addGallonsField"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -211,14 +211,14 @@
                                                 <accessibility key="accessibilityConfiguration" identifier="editPriceField"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Lc-K9-Yvu">
                                                 <rect key="frame" x="0.0" y="76" width="157" height="30"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="editGallonsField"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -270,9 +270,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dS0-2x-bAP">
-                                <rect key="frame" x="0.0" y="64" width="375" height="199"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dS0-2x-bAP">
+                                <rect key="frame" x="0.0" y="64" width="375" height="220"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="4Hm-Mf-rZe"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6q2-Iw-JDp">
                                 <rect key="frame" x="164" y="318" width="46" height="30"/>
@@ -284,6 +287,11 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dS0-2x-bAP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DxR-nY-E0w"/>
+                            <constraint firstItem="dS0-2x-bAP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="et0-nD-MZ1"/>
+                            <constraint firstItem="dS0-2x-bAP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jcb-NO-Bf2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
