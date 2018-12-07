@@ -9,7 +9,7 @@
 import UIKit
 import SQLite3
 
-class LoggerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddEntryProtocol, EditEntryProtocol {
+class LoggerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddEntryProtocol, EditEntryProtocol, SetDashboardImage {
     
     struct Entry {
         var date: Double
@@ -23,6 +23,7 @@ class LoggerViewController: UIViewController, UITableViewDataSource, UITableView
     var db: OpaquePointer?
     var entryBeingEdited: Int!
     @IBOutlet var tableView: UITableView!
+    var dashboardImage: UIImage?
     
     func addEntry(date: Double, miles: Int, price: Double, gallons: Double) {
         entries.append(Entry(date: date, miles: miles, price: price, gallons: gallons, spent: price * gallons))
@@ -37,6 +38,10 @@ class LoggerViewController: UIViewController, UITableViewDataSource, UITableView
         entries[entryBeingEdited].spent = price * gallons
         
         self.tableView.reloadData()
+    }
+    
+    func setDashboardImage(image: UIImage) {
+        dashboardImage = image
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -118,6 +123,13 @@ class LoggerViewController: UIViewController, UITableViewDataSource, UITableView
                     view.nextMileage = Int.max
                 }
             }
+        } else if segue.identifier == "dashboardSegue" {
+            let view = segue.destination as! DashboardController
+            view.delegate = self
+            
+            if let i = dashboardImage {
+                view.image = i
+            }
         }
     }
     
@@ -139,6 +151,11 @@ class LoggerViewController: UIViewController, UITableViewDataSource, UITableView
         if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS Entries (id INTEGER PRIMARY KEY AUTOINCREMENT, date DOUBLE, miles INTEGER, price DOUBLE, gallons DOUBLE, spent DOUBLE)", nil, nil, nil) != SQLITE_OK {
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error creating table: \(errmsg)")
+        }
+        
+        if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS DashboardImage (path TEXT)", nil, nil, nil) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("error creating dashboard table: \(errmsg)")
         }
         
         readValues()

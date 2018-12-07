@@ -8,9 +8,16 @@
 
 import UIKit
 
+protocol SetDashboardImage {
+    func setDashboardImage(image: UIImage)
+}
+
 class DashboardController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var imageView: UIImageView!
     let imagePicker = UIImagePickerController()
+    @IBOutlet weak var chooseButton: UIButton!
+    var image: UIImage?
+    var delegate: SetDashboardImage?
     
     @IBAction func loadImage(_ sender: Any) {
         imagePicker.allowsEditing = false
@@ -26,12 +33,22 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
         imagePicker.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let i = image {
+            imageView.contentMode = .scaleToFill
+            imageView.image = i
+            chooseButton.isHidden = true
+        }
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            imageView.contentMode = .scaleAspectFill
+            imageView.contentMode = .scaleToFill
             imageView.image = pickedImage
+            image = pickedImage
+            delegate!.setDashboardImage(image: pickedImage)
+            chooseButton.isHidden = true
         }
-        
         dismiss(animated: true, completion: nil)
     }
     
