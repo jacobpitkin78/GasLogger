@@ -19,6 +19,22 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
     var image: UIImage?
     var delegate: SetDashboardImage?
     @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var milesLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var gallonsLabel: UILabel!
+    @IBOutlet weak var fillupsLabel: UILabel!
+    @IBOutlet weak var mpgLabel: UILabel!
+    @IBOutlet weak var totalMilesLabel: UILabel!
+    @IBOutlet weak var totalSpentLabel: UILabel!
+    var lastFillup: String?
+    var lastMiles: String?
+    var lastPrice: String?
+    var lastGallons: String?
+    var totalFillups: String?
+    var avgMpg: String?
+    var totalMiles: String?
+    var totalSpent: String?
     
     @IBAction func loadImage(_ sender: Any) {
         imagePicker.allowsEditing = false
@@ -48,6 +64,15 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
             chooseButton.isHidden = true
             editButton.isHidden = false
         }
+        
+        dateLabel.text = lastFillup
+        milesLabel.text = lastMiles
+        priceLabel.text = lastPrice
+        gallonsLabel.text = lastGallons
+        fillupsLabel.text = totalFillups
+        mpgLabel.text = avgMpg
+        totalMilesLabel.text = totalMiles
+        totalSpentLabel.text = totalSpent
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

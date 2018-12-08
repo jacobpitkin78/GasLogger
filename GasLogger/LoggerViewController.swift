@@ -175,6 +175,49 @@ class LoggerViewController: UIViewController, UITableViewDataSource, UITableView
             let view = segue.destination as! DashboardController
             view.delegate = self
             
+            if entries.count > 0 {
+                let formatter = DateFormatter()
+                formatter.timeStyle = .medium
+                formatter.dateStyle = .medium
+                
+                let date = formatter.string(from: Date(timeIntervalSince1970: TimeInterval(entries[entries.count-1].date)))
+                
+                view.lastFillup = "\(date)"
+                view.lastMiles = "\(entries[entries.count-1].miles)"
+                view.lastPrice = "\(entries[entries.count-1].price)"
+                view.lastGallons = "\(entries[entries.count-1].gallons)"
+                
+                var mpg: Double = 0
+                var miles: Int = 0
+                var spent: Double = 0
+                
+                var index = 0
+                for entry in entries {
+                    if index > 0 {
+                        mpg += (Double((entry.miles - entries[index-1].miles)) / entry.gallons)
+                    }
+                    
+                    miles += entry.miles
+                    spent += entry.spent
+                    
+                    index += 1
+                }
+                
+                view.totalFillups = "\(entries.count)"
+                view.avgMpg = "\(String(format: "%.2f", mpg / Double(entries.count)))"
+                view.totalMiles = "\(miles)"
+                view.totalSpent = "$\(String(format: "%.2f", spent))"
+            } else {
+                view.lastFillup = "-"
+                view.lastMiles = "-"
+                view.lastPrice = "-"
+                view.lastGallons = "-"
+                view.totalFillups = "0"
+                view.avgMpg = "-"
+                view.totalMiles = "0"
+                view.totalSpent = "$0.00"
+            }
+            
             if let i = getSavedImage(named: "dashboard") {
                 view.image = i
             }
