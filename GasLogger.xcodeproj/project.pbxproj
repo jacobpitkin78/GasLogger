@@ -53,7 +53,7 @@
 		AD3BA16121B5F6B20072A16F /* LoggerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerViewController.swift; sourceTree = "<group>"; };
 		AD3BA16321B5F8550072A16F /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		AD3BA16521B5F8A80072A16F /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
-		ADCE586D21BB95DC001CE743 /* 2018-12-07 22-57-49.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "2018-12-07 22-57-49.mp4"; sourceTree = "<group>"; };
+		ADCE586E21BB977B001CE743 /* 2018-12-07 23-04-19.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "2018-12-07 23-04-19.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 				AD3BA14721B5F6410072A16F /* GasLoggerTests */,
 				AD3BA15221B5F6410072A16F /* GasLoggerUITests */,
 				AD3BA13121B5F6400072A16F /* Products */,
-				ADCE586D21BB95DC001CE743 /* 2018-12-07 22-57-49.mp4 */,
+				ADCE586E21BB977B001CE743 /* 2018-12-07 23-04-19.mp4 */,
 			);
 			sourceTree = "<group>";
 		};
