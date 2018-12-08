@@ -140,24 +140,66 @@
                                     <constraint firstAttribute="height" constant="106" id="07L-aJ-Y13"/>
                                 </constraints>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Web-mE-TYW">
+                                <rect key="frame" x="119" y="202" width="240" height="320"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="JdH-IZ-5yh"/>
+                                    <constraint firstAttribute="height" constant="320" id="bpu-aA-kFn"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D70-LN-xJa">
+                                <rect key="frame" x="224" y="347" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="q0e-Bj-9m1"/>
+                                </constraints>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadImage:" destination="8n7-7S-BKQ" eventType="touchUpInside" id="XrZ-Mv-bx8"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vI6-5n-t7S">
+                                <rect key="frame" x="329" y="492" width="30" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5uY-0W-ydZ"/>
+                                </constraints>
+                                <state key="normal" title="Edit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="editImage:" destination="8n7-7S-BKQ" eventType="touchUpInside" id="eNI-qX-zy0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="B3D-8F-ohg" firstAttribute="leading" secondItem="W3m-JZ-rl5" secondAttribute="leading" constant="16" id="1ko-MW-eVd"/>
+                            <constraint firstItem="W3m-JZ-rl5" firstAttribute="trailing" secondItem="vI6-5n-t7S" secondAttribute="trailing" constant="16" id="5PB-eI-Q2Z"/>
                             <constraint firstItem="B3D-8F-ohg" firstAttribute="top" secondItem="W3m-JZ-rl5" secondAttribute="top" constant="16" id="CqP-wS-fhr"/>
+                            <constraint firstItem="Web-mE-TYW" firstAttribute="top" secondItem="B3D-8F-ohg" secondAttribute="bottom" constant="16" id="II4-Ve-c7t"/>
+                            <constraint firstItem="vI6-5n-t7S" firstAttribute="top" secondItem="B3D-8F-ohg" secondAttribute="bottom" constant="306" id="M7b-a5-DxH"/>
+                            <constraint firstItem="W3m-JZ-rl5" firstAttribute="trailing" secondItem="Web-mE-TYW" secondAttribute="trailing" constant="16" id="MJW-Nf-iy0"/>
+                            <constraint firstItem="D70-LN-xJa" firstAttribute="top" secondItem="B3D-8F-ohg" secondAttribute="bottom" constant="161" id="eML-Pa-QnM"/>
                             <constraint firstItem="W3m-JZ-rl5" firstAttribute="trailing" secondItem="B3D-8F-ohg" secondAttribute="trailing" constant="16" id="t0g-Sj-Dlb"/>
+                            <constraint firstItem="W3m-JZ-rl5" firstAttribute="trailing" secondItem="D70-LN-xJa" secondAttribute="trailing" constant="121" id="zOI-ek-S2c"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="W3m-JZ-rl5"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="D70-LN-xJa" id="GWi-Eq-wCc"/>
+                        <outlet property="editButton" destination="vI6-5n-t7S" id="8Oc-da-FJB"/>
                         <outlet property="gallonsField" destination="Bws-d2-80E" id="tpI-Sp-uJj"/>
+                        <outlet property="imageView" destination="Web-mE-TYW" id="H7j-o8-LHL"/>
                         <outlet property="milesField" destination="9Wj-VQ-ofK" id="aWq-58-M5d"/>
                         <outlet property="priceField" destination="v3e-jq-kN1" id="mt8-JY-XlO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kBr-w8-KAH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513" y="-252"/>
+            <point key="canvasLocation" x="512.79999999999995" y="-252.32383808095955"/>
         </scene>
         <!--Edit Entry-->
         <scene sceneID="uyB-M3-Waj">
@@ -227,24 +269,66 @@
                                     <constraint firstAttribute="height" constant="106" id="LsA-cN-B51"/>
                                 </constraints>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fDM-sC-TFQ">
+                                <rect key="frame" x="119" y="202" width="240" height="320"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="jNu-h6-430"/>
+                                    <constraint firstAttribute="height" constant="320" id="oDn-YE-KVZ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wxb-FK-jH0">
+                                <rect key="frame" x="224" y="347" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fXe-5s-Dkr"/>
+                                </constraints>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="insertImage:" destination="xpZ-sE-aqe" eventType="touchUpInside" id="bWE-KD-IYP"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kng-1Z-yTc">
+                                <rect key="frame" x="329" y="492" width="30" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4YB-rf-dRH"/>
+                                </constraints>
+                                <state key="normal" title="Edit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="editImage:" destination="xpZ-sE-aqe" eventType="touchUpInside" id="kjD-cm-gS4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0Lq-Q2-byH" firstAttribute="top" secondItem="aXC-em-Nry" secondAttribute="top" constant="16" id="8Ei-6Z-QVq"/>
+                            <constraint firstItem="aXC-em-Nry" firstAttribute="trailing" secondItem="kng-1Z-yTc" secondAttribute="trailing" constant="16" id="Jm9-vQ-b14"/>
+                            <constraint firstItem="kng-1Z-yTc" firstAttribute="top" secondItem="0Lq-Q2-byH" secondAttribute="bottom" constant="306" id="NrU-cc-k8s"/>
                             <constraint firstItem="aXC-em-Nry" firstAttribute="trailing" secondItem="0Lq-Q2-byH" secondAttribute="trailing" constant="16" id="NsO-SK-kb3"/>
+                            <constraint firstItem="fDM-sC-TFQ" firstAttribute="top" secondItem="0Lq-Q2-byH" secondAttribute="bottom" constant="16" id="PeB-D0-Gep"/>
+                            <constraint firstItem="aXC-em-Nry" firstAttribute="trailing" secondItem="fDM-sC-TFQ" secondAttribute="trailing" constant="16" id="VnX-Zk-kJW"/>
                             <constraint firstItem="0Lq-Q2-byH" firstAttribute="leading" secondItem="aXC-em-Nry" secondAttribute="leading" constant="16" id="rEf-K1-o4q"/>
+                            <constraint firstItem="aXC-em-Nry" firstAttribute="trailing" secondItem="Wxb-FK-jH0" secondAttribute="trailing" constant="121" id="w7T-d8-pVp"/>
+                            <constraint firstItem="Wxb-FK-jH0" firstAttribute="top" secondItem="0Lq-Q2-byH" secondAttribute="bottom" constant="161" id="yNH-FX-boF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aXC-em-Nry"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="Wxb-FK-jH0" id="Jzq-zg-kHr"/>
+                        <outlet property="editButton" destination="kng-1Z-yTc" id="NX5-4d-08g"/>
                         <outlet property="gallonsField" destination="9Lc-K9-Yvu" id="O22-4i-zcF"/>
+                        <outlet property="imageView" destination="fDM-sC-TFQ" id="Imv-xS-4h6"/>
                         <outlet property="milesField" destination="QfJ-Pp-Osj" id="xXm-j3-Qaa"/>
                         <outlet property="priceField" destination="eh0-tV-AOV" id="BTh-gG-cuq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6g-ZK-Y69" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513" y="493"/>
+            <point key="canvasLocation" x="512.79999999999995" y="492.50374812593708"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hKI-Zl-s7q">

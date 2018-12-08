@@ -9,10 +9,10 @@
 import UIKit
 
 protocol EditEntryProtocol {
-    func editEntry(miles: Int, price: Double, gallons: Double)
+    func editEntry(miles: Int, price: Double, gallons: Double, image: UIImage?)
 }
 
-class EditViewController: UIViewController {
+class EditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var milesField: UITextField!
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var gallonsField: UITextField!
@@ -22,6 +22,40 @@ class EditViewController: UIViewController {
     var gallons: Double?
     var previousMileage: Int?
     var nextMileage: Int?
+    var image: UIImage?
+    let imagePicker = UIImagePickerController()
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
+    
+    @IBAction func insertImage(_ sender: Any) {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func editImage(_ sender: Any) {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageView.contentMode = .scaleToFill
+            imageView.image = pickedImage
+            image = pickedImage
+            addButton.isHidden = true
+            editButton.isHidden = false
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +64,8 @@ class EditViewController: UIViewController {
         
         let save = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveItem))
         self.navigationItem.rightBarButtonItem = save
+        
+        imagePicker.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +74,13 @@ class EditViewController: UIViewController {
         milesField.text = String(miles!)
         priceField.text = String(price!)
         gallonsField.text = String(gallons!)
+        
+        if let i = image {
+            imageView.contentMode = .scaleToFill
+            imageView.image = i
+            addButton.isHidden = true
+            editButton.isHidden = false
+        }
     }
     
     @objc func saveItem() {
@@ -57,7 +100,7 @@ class EditViewController: UIViewController {
             return
         }
         
-        delegate!.editEntry(miles: Int(milesField.text!)!, price: Double(priceField.text!)!, gallons: Double(gallonsField.text!)!)
+        delegate!.editEntry(miles: Int(milesField.text!)!, price: Double(priceField.text!)!, gallons: Double(gallonsField.text!)!, image: image)
         
         self.navigationController?.popViewController(animated: true)
     }

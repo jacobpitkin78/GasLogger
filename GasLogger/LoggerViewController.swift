@@ -25,17 +25,37 @@ class LoggerViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet var tableView: UITableView!
     var dashboardImage: UIImage?
     
-    func addEntry(date: Double, miles: Int, price: Double, gallons: Double) {
+    func addEntry(date: Double, miles: Int, price: Double, gallons: Double, image: UIImage?) {
         entries.append(Entry(date: date, miles: miles, price: price, gallons: gallons, spent: price * gallons))
+        
+        if let i = image {
+            let result = saveImage(image: i, path: "\(date)")
+            
+            if result {
+                print("saved added image")
+            } else {
+                print("didn't save added image")
+            }
+        }
         
         self.tableView.reloadData()
     }
     
-    func editEntry(miles: Int, price: Double, gallons: Double) {
+    func editEntry(miles: Int, price: Double, gallons: Double, image: UIImage?) {
         entries[entryBeingEdited].miles = miles
         entries[entryBeingEdited].price = price
         entries[entryBeingEdited].gallons = gallons
         entries[entryBeingEdited].spent = price * gallons
+        
+        if let i = image {
+            let result = saveImage(image: i, path: "\(entries[entryBeingEdited].date)")
+            
+            if result {
+                print("image saved from edit")
+            } else {
+                print("image not saved from edit")
+            }
+        }
         
         self.tableView.reloadData()
     }
@@ -81,10 +101,27 @@ class LoggerViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {(action: UIContextualAction, sourceView: UIView, actionPerformed:(Bool) -> Void) in
-            self.entries.remove(at: indexPath.row)
-            tableView.reloadData()
-            actionPerformed(true)
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {(action: UIContextualAction, sourceView: UIView, actionPerformed:@escaping (Bool) -> Void) in
+            let dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this?", preferredStyle: .alert)
+            
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                if self.removeImage(named: "\(self.entries[indexPath.row].date)") {
+                    print("returned true")
+                }
+                self.entries.remove(at: indexPath.row)
+                tableView.reloadData()
+                actionPerformed(true)
+            })
+            
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+                print("Cancel button tapped")
+                actionPerformed(false)
+            }
+            
+            dialogMessage.addAction(ok)
+            dialogMessage.addAction(cancel)
+            
+            self.present(dialogMessage, animated: true, completion: nil)
         }
         
         return UISwipeActionsConfiguration(actions: [deleteAction])
@@ -130,13 +167,13 @@ class LoggerViewController: UIViewController, UITableViewDataSource, UITableView
                     view.nextMileage = Int.max
                 }
             }
+            
+            if let i = getSavedImage(named: "\(entries[entryBeingEdited].date)") {
+                view.image = i
+            }
         } else if segue.identifier == "dashboardSegue" {
             let view = segue.destination as! DashboardController
             view.delegate = self
-            
-//            if let i = dashboardImage {
-//                view.image = i
-//            }
             
             if let i = getSavedImage(named: "dashboard") {
                 view.image = i
@@ -283,6 +320,22 @@ class LoggerViewController: UIViewController, UITableViewDataSource, UITableView
             return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent("\(named).png").path)
         }
         return nil
+    }
+    
+    func removeImage(named: String) -> Bool {
+        do {
+            if FileManager.default.fileExists(atPath: "\(named).png") {
+                try FileManager.default.removeItem(atPath: "\(named).png")
+                print("removed file")
+                return true
+            }
+        } catch {
+            print(error.localizedDescription)
+            return false
+        }
+        
+        print("nothing to remove")
+        return false
     }
     
 
