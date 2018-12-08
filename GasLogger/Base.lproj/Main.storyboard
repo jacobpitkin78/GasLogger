@@ -282,17 +282,34 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="zHD-Kp-gt0"/>
                                 </constraints>
-                                <state key="normal" title="Choose Image"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="loadImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FvS-jp-WCV"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLR-lA-GE4">
+                                <rect key="frame" x="345" y="254" width="30" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Hmz-6a-abI"/>
+                                </constraints>
+                                <state key="normal" title="Edit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="editImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sec-uW-cD1"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="DLR-lA-GE4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="190" id="7Cy-Wk-Fud"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6q2-Iw-JDp" secondAttribute="trailing" constant="138" id="CAd-1l-T8o"/>
                             <constraint firstItem="6q2-Iw-JDp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="95" id="Dvg-oQ-LG2"/>
                             <constraint firstItem="dS0-2x-bAP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DxR-nY-E0w"/>
+                            <constraint firstItem="DLR-lA-GE4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ndk-bi-Gog"/>
                             <constraint firstItem="6q2-Iw-JDp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="138" id="RFU-2d-kLv"/>
                             <constraint firstItem="dS0-2x-bAP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="et0-nD-MZ1"/>
                             <constraint firstItem="dS0-2x-bAP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jcb-NO-Bf2"/>
@@ -301,6 +318,7 @@
                     </view>
                     <connections>
                         <outlet property="chooseButton" destination="6q2-Iw-JDp" id="WLK-X2-5pd"/>
+                        <outlet property="editButton" destination="DLR-lA-GE4" id="P4v-1h-lgI"/>
                         <outlet property="imageView" destination="dS0-2x-bAP" id="MAL-95-Nq0"/>
                     </connections>
                 </viewController>

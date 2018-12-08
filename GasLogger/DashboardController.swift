@@ -18,8 +18,16 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var chooseButton: UIButton!
     var image: UIImage?
     var delegate: SetDashboardImage?
+    @IBOutlet weak var editButton: UIButton!
     
     @IBAction func loadImage(_ sender: Any) {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func editImage(_ sender: Any) {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
         
@@ -38,6 +46,7 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
             imageView.contentMode = .scaleToFill
             imageView.image = i
             chooseButton.isHidden = true
+            editButton.isHidden = false
         }
     }
     
@@ -48,6 +57,7 @@ class DashboardController: UIViewController, UIImagePickerControllerDelegate, UI
             image = pickedImage
             delegate!.setDashboardImage(image: pickedImage)
             chooseButton.isHidden = true
+            editButton.isHidden = false
         }
         dismiss(animated: true, completion: nil)
     }

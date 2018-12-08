@@ -42,6 +42,13 @@ class LoggerViewController: UIViewController, UITableViewDataSource, UITableView
     
     func setDashboardImage(image: UIImage) {
         dashboardImage = image
+        let result = saveImage(image: image, path: "dashboard")
+        
+        if result {
+            print("saved")
+        } else {
+            print("not saved")
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -127,7 +134,11 @@ class LoggerViewController: UIViewController, UITableViewDataSource, UITableView
             let view = segue.destination as! DashboardController
             view.delegate = self
             
-            if let i = dashboardImage {
+//            if let i = dashboardImage {
+//                view.image = i
+//            }
+            
+            if let i = getSavedImage(named: "dashboard") {
                 view.image = i
             }
         }
@@ -143,6 +154,7 @@ class LoggerViewController: UIViewController, UITableViewDataSource, UITableView
         notificationCenter.addObserver(self, selector: #selector(saveToDatabase(_:)), name: UIApplication.willResignActiveNotification, object: nil)
         
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("GasLogger.sqlite")
+        
         
         if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
             print("error opening database")
@@ -248,6 +260,29 @@ class LoggerViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         sqlite3_close(db)
+    }
+    
+    func saveImage(image: UIImage, path: String) -> Bool {
+        guard let data = image.pngData() else {
+            return false
+        }
+        guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as NSURL else {
+            return false
+        }
+        do {
+            try data.write(to: directory.appendingPathComponent("\(path).png")!)
+            return true
+        } catch {
+            print(error.localizedDescription)
+            return false
+        }
+    }
+    
+    func getSavedImage(named: String) -> UIImage? {
+        if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
+            return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent("\(named).png").path)
+        }
+        return nil
     }
     
 
